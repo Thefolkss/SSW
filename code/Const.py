@@ -1,0 +1,14 @@
+# W
+WIN_WIDTH = 576
+WIN_HEIGHT = 324
+
+# C
+COLOR_WHITE= (255, 255, 255)
+COLOR_GRAY= (128, 128, 128)
+
+# M
+MENU_OPTION= ('NOVO JOGO - 1P',
+              'NOVO JOGO - 2P COOPERATIVO',
+              'NOVO JOGO- 2P COMPETITIVO',
+              'PLACAR',
+              'SAIR')

@@ -4,7 +4,7 @@
 import pygame
 
 from code.Menu import Menu
-from const import WIN_WIDTH, WIN_HEIGHT
+from code.Const import WIN_WIDTH, WIN_HEIGHT
 
 
 class Game:
@@ -19,8 +19,4 @@ class Game:
             pass
 
 
-            # Check for all events
-            #for event in pygame.event.get():
-            #   if event.type == pygame.QUIT:
-            #       pygame.quit()  # Close window
-            #        quit()  # End pygame
+
