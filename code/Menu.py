@@ -4,7 +4,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, COLOR_WHITE, MENU_OPTION, COLOR_GRAY
+from code.Const import WIN_WIDTH, C_WHITE, MENU_OPTION, C_GRAY
 
 
 class Menu:
@@ -20,16 +20,16 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "SPACE", COLOR_WHITE, ((WIN_WIDTH / 2), 60))
-            self.menu_text(50, "SHOOTERS", COLOR_WHITE, ((WIN_WIDTH / 2), 95))
-            self.menu_text(50, "WAR", COLOR_WHITE, ((WIN_WIDTH / 2), 130))
-            self.menu_text(15, "By: Felipe 'Folks' Knaut", COLOR_WHITE, (60, 10))
+            self.menu_text(50, "SPACE", C_WHITE, ((WIN_WIDTH / 2), 60))
+            self.menu_text(50, "SHOOTERS", C_WHITE, ((WIN_WIDTH / 2), 95))
+            self.menu_text(50, "WAR", C_WHITE, ((WIN_WIDTH / 2), 130))
+            self.menu_text(15, "By: Felipe 'Folks' Knaut", C_WHITE, (60, 10))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(25, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 180 + 30 * i))
+                    self.menu_text(25, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 180 + 30 * i))
                 else:
-                    self.menu_text(25, MENU_OPTION[i], COLOR_GRAY, ((WIN_WIDTH / 2), 180 + 30 * i))
+                    self.menu_text(25, MENU_OPTION[i], C_GRAY, ((WIN_WIDTH / 2), 180 + 30 * i))
 
             # Check for all events
             for event in pygame.event.get():

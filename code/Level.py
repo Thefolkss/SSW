@@ -7,7 +7,7 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_HEIGHT, COLOR_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
+from code.Const import WIN_HEIGHT, C_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, C_GREEN2, C_BLUE
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -41,6 +41,12 @@ class Level:
                     shoot = ent.shoot()
                     if shoot is not None:
                         self.entity_list.append(shoot)
+                    if ent.name == 'Player1':
+                        self.level_text(16, f'Jogador 1 - Vida: {ent.health} | Pontos: {ent.score}', C_BLUE,
+                                        (WIN_HEIGHT - 150, 5))
+                    if ent.name == 'Player2':
+                        self.level_text(16, f'Jogador 2 - Vida: {ent.health} | Pontos: {ent.score}', C_GREEN2,
+                                        (WIN_HEIGHT + 50, 5))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -50,8 +56,8 @@ class Level:
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
             # Printed text
-            self.level_text(16, f'Fase 1 - Tempo: {self.timeout / 1000 :.1f}s', COLOR_WHITE, (10, 5))
-            self.level_text(16, f'fps: {clock.get_fps() :.0f}', COLOR_WHITE, (10, WIN_HEIGHT - 15))
+            self.level_text(16, f'Fase 1 - Tempo: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))
+            self.level_text(16, f'fps: {clock.get_fps() :.0f}', C_WHITE, (10, WIN_HEIGHT - 15))
             # self.level_text(16, f'entidades: {len(self.entity_list)}', COLOR_WHITE, (10, WIN_HEIGHT - 20))
             pygame.display.flip()
             # Collisions
